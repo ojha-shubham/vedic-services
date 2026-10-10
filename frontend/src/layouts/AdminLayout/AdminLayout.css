@@ -1,0 +1,105 @@
+.admin-shell {
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      ellipse at 92% 0%,
+      rgb(210 167 96 / 11%),
+      transparent 36rem
+    ),
+    var(--color-background);
+}
+
+.admin-topbar {
+  min-height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-inline: clamp(1rem, 5vw, 4rem);
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+.admin-topbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.admin-nav-chip,
+.admin-back-link {
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.85rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  color: var(--color-primary);
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  transition:
+    background var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.admin-nav-chip:hover,
+.admin-back-link:hover,
+.admin-nav-chip.active {
+  background: var(--color-primary-light);
+  border-color: var(--color-primary);
+}
+
+.language-toggle--quiet {
+  white-space: nowrap;
+}
+
+.admin-main {
+  width: min(var(--container-width), calc(100% - clamp(2rem, 7vw, 8rem)));
+  margin-inline: auto;
+  padding-block: 1.5rem 5rem;
+}
+
+.admin-preview-note {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e7d5ad;
+  border-radius: var(--radius-sm);
+  background: #fbf2df;
+  color: #735b31;
+  font-size: var(--text-xs);
+  line-height: 1.5;
+}
+
+@media (max-width: 560px) {
+  .admin-topbar {
+    min-height: 70px;
+    padding-inline: 1rem;
+  }
+
+  .admin-topbar__actions {
+    gap: 0.2rem;
+  }
+
+  .admin-back-link {
+    width: 40px;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .admin-back-link span {
+    display: none;
+  }
+
+  .admin-main {
+    width: calc(100% - 2rem);
+    padding-block: 1rem 3rem;
+  }
+
+  .language-toggle--quiet {
+    padding-inline: 0.4rem;
+  }
+}

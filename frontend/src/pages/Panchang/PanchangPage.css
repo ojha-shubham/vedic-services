@@ -1,0 +1,159 @@
+.panchang-page {
+  min-height: 70vh;
+  padding-block: clamp(3rem, 7vw, 5.5rem);
+}
+
+.panchang-page__heading {
+  max-width: 720px;
+}
+
+.panchang-page__heading h1 {
+  margin-top: 0.8rem;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+}
+
+.panchang-page__heading > p {
+  margin-top: 0.8rem;
+  color: var(--color-text-secondary);
+}
+
+.panchang-page__location {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 1rem;
+  color: var(--color-primary);
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+}
+
+.panchang-page__controls {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+}
+
+.panchang-page__controls label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-primary);
+  font-weight: var(--font-semibold);
+}
+
+.panchang-page__controls input {
+  min-height: 44px;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--input-radius);
+  background: var(--color-background);
+  color: var(--color-text);
+}
+
+.panchang-page__date {
+  margin-block: 2.5rem 1.2rem;
+}
+
+.panchang-page__date > span,
+.panchang-page__item > span {
+  color: var(--color-text-muted);
+  font-size: var(--text-xs);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.panchang-page__date h2 {
+  margin-top: 0.3rem;
+  color: var(--color-primary);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+}
+
+.panchang-page__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.panchang-page__item {
+  min-height: 105px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+}
+
+.panchang-page__item strong {
+  color: var(--color-primary);
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.panchang-page__festivals {
+  margin-top: 2rem;
+  padding: 1.25rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-accent-soft);
+}
+
+.panchang-page__festivals h2 {
+  font-size: 1.35rem;
+}
+
+.panchang-page__festivals ul {
+  display: grid;
+  gap: 0.6rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.panchang-page__festivals li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.7rem;
+}
+
+.panchang-page__festivals li span,
+.panchang-page__note,
+.panchang-page__unavailable {
+  color: var(--color-text-secondary);
+  font-size: var(--text-sm);
+}
+
+.panchang-page__note {
+  margin-top: 1.5rem;
+}
+
+.panchang-page--hindi h1,
+.panchang-page--hindi h2 {
+  font-family: "Noto Serif Devanagari", "Nirmala UI", var(--font-display);
+  line-height: 1.35;
+}
+
+@media (max-width: 760px) {
+  .panchang-page__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .panchang-page__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .panchang-page__controls {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,28 @@
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+  box-shadow: var(--shadow-focus);
+}
+
+button,
+a,
+input,
+textarea,
+select {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-padding-top: 6rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
