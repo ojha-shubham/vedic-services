@@ -8,7 +8,6 @@ import {
   Flame,
   HeartHandshake,
   MapPin,
-  MessageCircle,
   Sparkles,
   Sun,
   Sunset,
@@ -27,6 +26,13 @@ import {
 } from "../../services/panchang.service";
 import type { DailyPanchangResult, FestivalDay } from "panchang-ts";
 import "./HomePage.css";
+
+const whatsappNumber =
+  import.meta.env.VITE_WHATSAPP_NUMBER?.replace(/\D/g, "") ?? "";
+const whatsappUrl =
+  whatsappNumber.length >= 10 && whatsappNumber.length <= 15
+    ? `https://wa.me/${whatsappNumber}`
+    : null;
 
 const values = [
   { icon: HeartHandshake, key: "trust.guidance" },
@@ -54,6 +60,8 @@ const steps = [
     icon: Flame,
   },
 ] as const;
+
+const offeredCeremonies = ceremonies.filter((ceremony) => ceremony.isOffered);
 
 export function HomePage() {
   const { language, t } = useLanguage();
@@ -129,7 +137,11 @@ export function HomePage() {
         <div
           className="hero-art"
           role="img"
-          aria-label="A decorated kalash with coconut prepared for a Hindu puja ceremony"
+          aria-label={
+            language === "hi"
+              ? "पवित्र अग्नि के समक्ष संपन्न होता वैदिक हवन"
+              : "A Vedic havan being performed around a sacred fire"
+          }
         >
           <div className="hero-art__photo" />
           <div className="hero-art__shade" />
@@ -139,7 +151,11 @@ export function HomePage() {
             <span className="hero-art__caption-symbol">ॐ</span>
             <span>
               <strong>शुभमस्तु</strong>
-              <small>May auspiciousness be with you</small>
+              <small>
+                {language === "hi"
+                  ? "आपके परिवार के लिए मंगलकामना"
+                  : "May auspiciousness be with your family"}
+              </small>
             </span>
           </div>
           <div className="hero-art__seal" aria-hidden="true">
@@ -244,14 +260,30 @@ export function HomePage() {
             <p>{t("services.copy")}</p>
           </div>
           <div className="service-grid">
-            {ceremonies.map((ceremony, index) => (
+            {offeredCeremonies.map((ceremony, index) => (
               <article className="service-card" key={ceremony.id}>
-                <div
-                  className={`service-card__symbol service-card__symbol--${index + 1}`}
+                <figure
+                  className={`service-card__media${ceremony.image ? "" : " service-card__media--placeholder"}`}
                 >
-                  <span aria-hidden="true">{ceremony.icon}</span>
+                  {ceremony.image ? (
+                    <img
+                      src={ceremony.image}
+                      alt={
+                        language === "hi"
+                          ? ceremony.imageAltHi
+                          : ceremony.imageAlt
+                      }
+                      loading="lazy"
+                    />
+                  ) : (
+                    <span>
+                      {language === "hi"
+                        ? "इस संस्कार का वास्तविक चित्र शीघ्र उपलब्ध होगा"
+                        : "A ceremony photograph will be added"}
+                    </span>
+                  )}
                   <span className="service-card__number">0{index + 1}</span>
-                </div>
+                </figure>
                 <div className="service-card__body">
                   <h3>{language === "hi" ? ceremony.nameHi : ceremony.name}</h3>
                   <p>
@@ -286,15 +318,23 @@ export function HomePage() {
 
       <section className="about-section" id="about">
         <div className="about-section__inner page-container">
-          <div className="about-art" aria-hidden="true">
-            <div className="about-art__image" />
-            <div className="about-art__seal">॥ श्री गणेशाय नमः ॥</div>
-            <div className="about-art__quote">
-              <span>“</span>
-              <p>श्रद्धावान् लभते ज्ञानम्</p>
-              <small>Through devotion, we find understanding.</small>
-            </div>
-          </div>
+          <figure className="about-art">
+            <img
+              className="about-art__image"
+              src="/assets/puja-diyas.jpg"
+              alt={
+                language === "hi"
+                  ? "पूजा की तैयारी में सजा कलश और जलते दीप"
+                  : "A decorated kalash and lit diyas prepared for puja"
+              }
+              loading="lazy"
+            />
+            <figcaption className="about-art__caption">
+              {language === "hi"
+                ? "श्रद्धा से सजी पूजा की तैयारी"
+                : "A traditional puja arrangement"}
+            </figcaption>
+          </figure>
           <div className="about-copy">
             <span className="eyebrow">
               <span />
@@ -524,15 +564,27 @@ export function HomePage() {
         </div>
       </section>
 
-      <a
-        className="whatsapp-float"
-        href="https://wa.me/919014465414?text=Namaste%20Pandit%20ji%2C%20I%20want%20to%20book%20a%20puja."
-        target="_blank"
-        rel="noreferrer"
-        aria-label="Chat on WhatsApp"
-      >
-        <MessageCircle size={24} />
-      </a>
+      {whatsappUrl && (
+        <a
+          className="whatsapp-float"
+          href={`${whatsappUrl}?text=${encodeURIComponent(
+            language === "hi"
+              ? "नमस्ते पंडित जी, मैं पूजा बुक करना चाहता/चाहती हूँ।"
+              : "Namaste Pandit ji, I would like to enquire about booking a puja.",
+          )}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={
+            language === "hi"
+              ? "WhatsApp पर संदेश भेजें"
+              : "Message on WhatsApp"
+          }
+        >
+          <span className="whatsapp-float__icon" aria-hidden="true">
+            WA
+          </span>
+        </a>
+      )}
 
       <section className="contact-section" id="contact">
         <div className="contact-section__inner page-container">

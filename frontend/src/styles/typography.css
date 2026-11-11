@@ -56,7 +56,7 @@ p {
 }
 
 .eyebrow--light {
-  color: #e4c798;
+  color: var(--color-gold);
 }
 
 .text-link {

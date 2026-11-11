@@ -13,9 +13,9 @@ const translations = {
     "nav.book": "Book a puja",
     "nav.admin": "Admin",
     "hero.tag": "Vedic rituals, rooted in tradition",
-    "hero.title": "Bring peace and blessings into your home.",
+    "hero.title": "Pandit Lavakush Ojha — Vedic puja and ceremonies.",
     "hero.copy":
-      "Personalised Hindu puja and Vedic ceremonies, performed with care by Pandit Lavakush Ojha.",
+      "Explore the ceremonies listed here and enquire about the right puja for your family and occasion.",
     "hero.primary": "Plan your ceremony",
     "hero.secondary": "Explore services",
     "hero.note": "Trusted guidance · At home or online",
@@ -77,9 +77,9 @@ const translations = {
     "testimonials.eyebrow": "Words from families",
     "testimonials.title": "A little more peace for a meaningful day.",
     "testimonials.copy":
-      "Families trust Pandit ji for calm guidance, meaningful rituals, and a peaceful atmosphere.",
+      "Only family reviews published by the site administrator appear here.",
     "testimonials.empty":
-      "Family reviews will appear here once they are added by the site administrator.",
+      "No family reviews have been published by the site administrator yet.",
     "cta.title": "Planning a ceremony?",
     "cta.copy": "Let’s make it meaningful, together.",
     "cta.button": "Start your booking",
@@ -173,9 +173,9 @@ const translations = {
     "nav.book": "पूजा बुक करें",
     "nav.admin": "प्रशासन",
     "hero.tag": "परंपरा से जुड़े वैदिक संस्कार",
-    "hero.title": "अपने घर में सुख-शांति और मंगल लाएँ।",
+    "hero.title": "पंडित लवकुश ओझा — वैदिक पूजा एवं संस्कार।",
     "hero.copy":
-      "पंडित लवकुश ओझा के साथ श्रद्धा और विधि-विधान से व्यक्तिगत पूजा एवं वैदिक संस्कार।",
+      "यहाँ दी गई पूजाओं को देखें और अपने परिवार तथा अवसर के अनुरूप पूजा के लिए पूछताछ करें।",
     "hero.primary": "अपने संस्कार की योजना बनाएँ",
     "hero.secondary": "सेवाएँ देखें",
     "hero.note": "विश्वासपूर्ण मार्गदर्शन · घर पर या ऑनलाइन",
@@ -237,9 +237,9 @@ const translations = {
     "testimonials.eyebrow": "परिवारों के अनुभव",
     "testimonials.title": "आपके खास दिन में थोड़ा और सुकून।",
     "testimonials.copy":
-      "परिवार अपने शांत मार्गदर्शन, अर्थपूर्ण पूजा और सौम्य वातावरण के लिए पंडित जी पर भरोसा करते हैं।",
+      "यहाँ केवल वेबसाइट प्रशासक द्वारा प्रकाशित पारिवारिक अनुभव दिखाए जाते हैं।",
     "testimonials.empty":
-      "प्रशासक द्वारा जोड़े जाने के बाद परिवारों के अनुभव यहाँ दिखाई देंगे।",
+      "वेबसाइट प्रशासक ने अभी कोई पारिवारिक अनुभव प्रकाशित नहीं किया है।",
     "cta.title": "किसी पूजा की योजना बना रहे हैं?",
     "cta.copy": "आइए, इसे साथ मिलकर अर्थपूर्ण बनाएँ।",
     "cta.button": "बुकिंग शुरू करें",

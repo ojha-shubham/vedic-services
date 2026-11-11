@@ -3,8 +3,8 @@
   z-index: 20;
   top: 0;
   width: 100%;
-  border-bottom: 1px solid rgb(230 223 210 / 75%);
-  background: rgb(251 248 241 / 94%);
+  border-bottom: 1px solid color-mix(in srgb, var(--color-border) 75%, transparent);
+  background: color-mix(in srgb, var(--color-background) 94%, transparent);
   backdrop-filter: blur(16px);
 }
 

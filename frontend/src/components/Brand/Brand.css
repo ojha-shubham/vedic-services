@@ -12,7 +12,7 @@
   display: grid;
   flex: 0 0 auto;
   place-items: center;
-  border: 1px solid rgb(187 117 64 / 46%);
+  border: 1px solid color-mix(in srgb, var(--color-gold) 55%, transparent);
   border-radius: 50%;
   color: var(--color-accent-dark);
   font-family: var(--font-display);
@@ -42,16 +42,16 @@
 }
 
 .brand--inverse {
-  color: #fffaf0;
+  color: var(--color-text-inverse);
 }
 
 .brand--inverse .brand__seal {
-  border-color: rgb(226 199 152 / 55%);
-  color: #e4c798;
+  border-color: color-mix(in srgb, var(--color-gold) 65%, transparent);
+  color: var(--color-gold);
 }
 
 .brand--inverse .brand__name > span {
-  color: #c9beaa;
+  color: var(--color-border-strong);
 }
 
 @media (max-width: 420px) {
